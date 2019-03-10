@@ -75,7 +75,7 @@ With Cloud Foundry, as mentioned earlier, the application or task itself becomes
 - Update applications
 - Delete applications
 
- **Deploying and scaling applications are completely independent operations**
+ Note **Deploying and scaling applications are completely independent operations**
 
 
 
