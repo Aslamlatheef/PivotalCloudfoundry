@@ -54,5 +54,32 @@ The staging process results in a ***droplet*** that the ***Cell*** can unpack, c
 
     - This ability provides deployment speed and confidence that all running instances from the same droplet are identical.
 
+### Self-Service Application Life Cycle
+
+In most traditional scenarios, the application developer and application operator typically perform the following:
+1. Develop an application
+2. Deploy application services
+3. Deploy an application and connect (bind) it to application services
+4. Scale an application, both up and down
+5. Monitor an application
+6. Upgrade an application
+
+Adopting a self-service approach removes hand-offs and potentially lengthy delays between teams. For example, the ability to deploy an application, provision and bind applications to services, scale, monitor, and upgrade are all offered by a simple call to the platform.
+
+With Cloud Foundry, as mentioned earlier, the application or task itself becomes the single unit of deployment. Developers just push their applications to Cloud Foundry, and those applications run. If developers require multiple instances of an application to be running they can use cf scale to scale the application to N number of AIs. Cloud Foundry removes the cost and complexity of configuring infrastructure and middleware per application. Using a self-service model, users can do the following:
+
+- Deploy applications
+- Provision and bind additional services, such as messaging engines, caching solutions, and databases
+- Scale applications
+- Monitor application health and performance
+- Update applications
+- Delete applications
+
+* *Deploying and scaling applications are completely independent operations* *
+
+
+
+
+
 
 
