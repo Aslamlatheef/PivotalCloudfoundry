@@ -75,7 +75,28 @@ With Cloud Foundry, as mentioned earlier, the application or task itself becomes
 - Update applications
 - Delete applications
 
- Note **Deploying and scaling applications are completely independent operations**
+ Note **Deploying and scaling applications are completely independent operations** This provides the flexibility to scale at will, without the cost of having to redeploy the application every time. Users can simply scale an application with a self-service call to the platform. Through commercial products such as Pivotal Cloud Foundry, you can set up autoscaling policies for dynamic scaling of applications when they meet certain configurable thresholds.
+Removing the infrastructure, OS, and middleware configuration concerns from developers allows them to focus all their effort on the application instead of deploying and configuring supporting technologies. This keeps the development focus where it needs to be
+
+### how can you onboard application on PCF, what are the princepals that we need to follow ###
+
+An architectural style known as cloud-native applications has been established to describe the design of applications specifically written to run in a cloud environment. These applications avoid some of the antipatterns that were established in the client-server era, such as writing data to the local filesystem. Those antipatterns do not work as well in a cloud environment because, for example, local storage is ephemeral given that VMs can move between different hosts. [The Twelve-Factor App](http://12factor.net/) explains the 12 principles underpinning cloud-native applications.
+
+you can read about 12 principals to make application as a cloud agnostic, else you can do it **my way** 
+
+    1. Understand the application
+    2. Split Front end back end services with "Glue code."
+    3. Design your data model supporting independent services
+    4. isolate most of the service which can be separated and independent ( applies to both front end and back end)
+    5. start creating each service 
+    6. refactor the application
+    
+    
+
+
+
+
+
 
 
 
