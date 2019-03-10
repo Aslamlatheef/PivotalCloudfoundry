@@ -1,4 +1,4 @@
-# Installation of PCF
+# Installation of PCF 2.4 ( The latest at the moment)
 
 ## How does licensing model works
 PCF pass works on the Workspace capacity model and you can avail the detials from https://run.pivotal.io/pricing/
@@ -44,6 +44,52 @@ Also read
 
 ## On Azure
 ### Installation 
+
+Earlier Azure uses ARM template, but now it has been depricated. you can now deploy PCF via Terraform.
+Please create Service princepal with contributor access [Clickhere](https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-create-service-principals) 
+
+[Azure Pre-requirements](https://docs.pivotal.io/pivotalcf/2-4/customizing/azure.html)
+
+[Preparing to Deploy Ops Manager on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/prepare-env-manual.html)
+
+[Deploying Ops Manager on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/deploy-manual.html)
+
+[Deploying BOSH and Ops Manager on Azure Using Terraform](https://docs.pivotal.io/pivotalcf/2-4/om/azure/prepare-env-terraform.html)
+
+[Configuring BOSH Director on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/config-manual.html)
+
+[Deploying PAS on Azure](https://docs.pivotal.io/pivotalcf/2-4/customizing/azure-er-config.html)
+
+### Azure GOVT CLOUD
+[Configuring BOSH Director on Azure Government Cloud](https://docs.pivotal.io/pivotalcf/2-4/om/azure/gov-cloud.html)
+
+[Preparing to Deploy Ops Manager on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/prepare-env-manual.html)
+
+[Deploying Ops Manager on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/deploy-manual.html)
+
+[Configuring BOSH Director on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/config-manual.html)
+
+### Azure Germany
+[Configuring BOSH Director on Azure Germany](https://docs.pivotal.io/pivotalcf/2-4/om/azure/german-cloud.html)
+
+[Preparing to Deploy Ops Manager on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/prepare-env-manual.html)
+
+[Deploying Ops Manager on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/deploy-manual.html)
+
+[Configuring BOSH Director on Azure Manually](https://docs.pivotal.io/pivotalcf/2-4/om/azure/config-manual.html)
+
+## AWS (Amazon WebServices)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
