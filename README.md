@@ -91,7 +91,72 @@ you can read about 12 principals to make application as a cloud agnostic, else y
     5. start creating each service 
     6. refactor the application
     
-    
+### Release Engineering through BOSH ###
+the platform provides responsive IT operations, with full visibility and control over the application life cycle, provisioning, deployment, upgrades, and security patches. Several other operational benefits exist, such as built-in resilience, security, centralized user management, and better insights through capabilities like aggregated metrics and logging.
+
+The Cloud Foundry repository is structured for use with BOSH. BOSH is an open source tool chain for release-engineering, deployment, and life cycle management. Using a YAML (YAML Ain’t Markup Language) deployment manifest, BOSH creates and deploys (virtual) machines1 on top of the targeted computing infrastructure and then deploys and runs software (in our case Cloud Foundry and supporting services) on to those created machines. Many of the benefits to operators are provided through using BOSH to deploy and manage Cloud Foundry. BOSH is often overlooked as just another component of Cloud Foundry, but it is the bedrock of Cloud Foundry and a vital piece of the ecosystem. It performs monitoring, failure recovery, and software updates with zero-to-minimal downtime
+
+BOSH is designed to be a single tool covering the entire set of requirements of release engineering. BOSH enables software deployments to be:
+1. Automated
+2. Reproducible
+3. Scalable
+4. Monitored with self-healing failure recovery
+5. Updatable with zero-to-minimal downtime
+
+**BOSH** configures infrastructure through code. By design, BOSH tries to abstract away the differences between infrastructure platforms (IaaS or physical servers) into a generalized, cross-platform description of your deployment. This provides the benefit of being infrastructure agnostic (as far as possible).
+
+### Built-In Resilience and Fault Tolerance ###
+Cloud Foundry automates the recovery of failed applications, components, and processes. This self-healingremoves the recovery burden from the operator, ensuring speed of recovery. Cloud Foundry, underpinned by BOSH, achieves resiliency and self-healing through:
+1. Restarting failed system processes
+2. Recreating missing or unresponsive VMs
+3. Deployment of new AIs if an application crashes or becomes unresponsive
+4. Application striping across availability zones (AZs) to enforce separation of the underlying infrastructure
+5. Dynamic routing and load balancing
+
+Cloud Foundry deals with application orchestration and placement focused on even distribution across the infrastructure. The user should not need to worry about how the underlying infrastructure runs the application beyond having equal distribution across different resources (known as availability zones). The fact that multiple copies of the application are running with built-in resiliency is what matters.
+
+Cloud Foundry provides dynamic load balancing. Application consumers use a route to access an application; each route is directly bound to one or more applications in Cloud Foundry. When running multiple instances, it balances the load across the instances, dynamically updating its routing table. Dead application routes are automatically pruned from the routing table, with new routes added when they become available.
+
+***Note*** : Without these capabilities, the operations team is required to continually monitor and respond to pager alerts from failed apps and invalid routes. By replacing manual interaction with automated, self-healing software, applications and system components are restored quickly with less risk and downtime. The resiliency concern is satisfied once, for all applications running on the platform, as opposed to developing customized monitoring and restart scripts per application. The platform removes the ongoing cost and associated maintenance of bespoke resiliency solutions.
+
+***Self-Healing Processes***
+Traditional infrastructure as code tools do not check whether provisioned services are up and running. BOSH has strong opinions on how to create your release, forcing you to create a monitor script for the process. If a BOSH-deployed component has a process that dies, the monitor script will try to restart it.
+***Self-Healing VMs***
+BOSH has a Health Monitor and Resurrector. The Health Monitor uses status and life cycle events to monitor the health of VMs. If the Health Monitor detects a problem with a VM, it can trigger an alert and invoke the Resurrector. The Resurrector automatically recreates VMs identified by the Health Monitor as missing or unresponsive.
+
+***Self-Healing Application Instance Count***
+Cloud Foundry runs the application transparently, taking care of the application life cycle. If an AI dies for any reason (e.g., because of a bug in the application) or a VM dies, Cloud Foundry can self-heal by restarting new instances so as to keep the desired capacity to run AIs. It achieves this by monitoring how many instances of each application are running. The Cell manages its AIs, tracks started instances, and broadcasts state messages. When Cloud Foundry detects a discrepancy between the actual number of running instances versus the desired number of available AIs, it takes corrective action and initiates the deployment of new AIs. To ensure resiliency and fault tolerance, you should run multiple AIs for a single application. The AIs will be distributed across multiple Cells for resiliency.
+
+***Resiliency Through Availability Zones***
+Finally, Cloud Foundry supports the use of availability zones (AZs)
+![](https://github.com/Aslamlatheef/PivotalCloudfoundry/blob/master/PCF/cfazones.png)
+When you deploy multiple AIs, Cloud Foundry will distribute them evenly across the AZs. If, for example, a rack of servers fails and brings down an entire AZ, the AIs will still be up and serving traffic in the remaining AZs
+
+### Aggregated Streaming of Logs and Metrics ####
+Cloud Foundry provides insight into both the application and the underlying platform through aggregated logging and metrics. The logging system within Cloud Foundry is known as the Loggregator. It is the inner voice of the system, telling the operator and developer what is happening. It is used to manage the performance, health, and scale of running applications and the platform itself, via the following:
+1. Logs provide visibility into behavior; for example, application logs can be used to trace through a specific call stack.
+2. Metrics provide visibility into health; for example, container metrics can include memory, CPU, and disk-per-app instance.
+
+below images illustrates how application logs and syslogs are separated as streams, in part to provide isolation and security between the two independent concerns, and in part due to consumer preferences. Generally speaking, app developers do not want to wade through component logs to resolve an app-specific issue. Developers can trace the log flow from the frontend router to the application code from a single log file.
+
+![](https://github.com/Aslamlatheef/PivotalCloudfoundry/blob/master/PCF/logs.png)
+
+In addition to logs, metrics are gathered and streamed from system components. Operators can use metrics information to monitor an instance of Cloud Foundry. Furthermore, Cloud Foundry events show specific events such as when an application is started or stopped. The benefits of aggregated log, metric, and event streaming include the following:
+- You can stream logs to a single endpoint.
+- Streamed logs provide timestamped outputs per application.
+- Both application logs and system-component logs are aggregated, simplifying their consumption.
+- Metrics are gathered and streamed from system components.
+- Operators can use metrics information to monitor an instance of Cloud Foundry.
+- You can view logs from the command line or drain them into a log management service such as an ELK stack (Elasticsearch, Logstash, and Kibana), Splunk, or PCF Metrics.
+- Viewing events is useful when debugging problems. For example, it is useful to be able to correlate an app instance event (like an app crash) to the container’s specific metrics (high memory prior to crash).
+The cost of implementing an aggregated log and metrics-streaming solution involves bespoke engineering to orchestrate and aggregate the streaming of both syslog and application logs from every component within a distributed system into a central server. Using a platform removes the ongoing cost and associated maintenance of bespoke logging solutions.
+
+
+
+
+
+
+
 
 
 
