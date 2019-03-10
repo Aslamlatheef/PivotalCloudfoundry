@@ -31,3 +31,28 @@ Cloud Foundry allows the unit of deployment, i.e., what you deploy to run your a
 
 it is enough to know that buildpacks provide the framework and runtime support for your applications. A specific buildpack is used to package your application with all of its dependencies. The resulting staged application is referred to as a **droplet**
 
+**UNITS OF DEPLOYMENT** The phrase “the application is the unit of deployment” is used liberally
+
+#### Using cf push Command to Deploy
+You use the cf push command to deploy your application. It has demonstrably improved the deployment experience. From the time you run cf push to the point when the application is available, Cloud Foundry performs the following tasks:
+Uploads and stores application files
+- Examines and stores application metadata
+- Stages the application by using a buildpack to create a droplet
+- Selects an appropriate execution environment in which to run the droplet
+- Starts the AI and streams logs to the Loggregator
+
+***below*** is complete reference of pivotal * *cfpush* * commands that will help developers
+![](https://github.com/Aslamlatheef/PivotalCloudfoundry/blob/master/PCF/CFPUSHCR.png)
+
+
+#### Staging
+Although it is part of the cf push workflow, staging is a core Cloud Foundry concept. Cloud Foundry allows users to deploy a prebuilt Docker image or an application artifact (source code or binaries) that has not yet been containerized. When deploying an application artifact, Cloud Foundry will stage the application on a machine or **VM** known as a **Cell**, using everything required to compile and run the apps locally, including the following:
+- The OS stack on which the application runs
+- A buildpack containing all languages, libraries, dependencies, and runtime services the app uses
+
+The staging process results in a ***droplet*** that the ***Cell*** can unpack, compile, and run. You can then run the resulting droplet (as in the case of a Docker image) repeatedly over several Cells. The same droplet runs the same app instances over multiple Cells without incurring the cost of staging every time a new instance is run. 
+
+    - This ability provides deployment speed and confidence that all running instances from the same droplet are identical.
+
+
+
