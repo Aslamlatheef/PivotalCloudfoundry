@@ -82,12 +82,12 @@ Please create Service princepal with contributor access [Clickhere](https://docs
 
 [Pre-requirements](https://docs.pivotal.io/pivotalcf/2-4/customizing/aws.html)
 
-**[Installing PCF on AWS Manually](https://docs.pivotal.io/pivotalcf/2-4/om/aws/prepare-env-manual.html)
+**[Installing PCF on AWS Manually](https://docs.pivotal.io/pivotalcf/2-4/om/aws/prepare-env-manual.html)**
 
   [Configuring BOSH Director on AWS](https://docs.pivotal.io/pivotalcf/2-4/om/aws/config-manual.html)
   
   [Deploying PAS on AWS](https://docs.pivotal.io/pivotalcf/2-4/customizing/pcf-aws-manual-er-config.html)
-**[Installing PCF on AWS using Terraform](https://docs.pivotal.io/pivotalcf/2-4/customizing/aws-terraform.html)
+**[Installing PCF on AWS using Terraform](https://docs.pivotal.io/pivotalcf/2-4/customizing/aws-terraform.html)**
 
   [Deploying Ops Manager on AWS Using Terraform](https://docs.pivotal.io/pivotalcf/2-4/om/aws/prepare-env-terraform.html)
   
