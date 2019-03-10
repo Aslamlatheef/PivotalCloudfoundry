@@ -111,8 +111,36 @@ https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework
 
 # PCF on GCP
 
-  
- 
+[Installing Pivotal Cloud Foundry on GCP](https://docs.pivotal.io/pivotalcf/2-4/customizing/gcp.html)
+
+### Installing PCF on GCP manually 
+
+[Preparing to Deploy Ops Manager on GCP Manually](https://docs.pivotal.io/pivotalcf/2-4/om/gcp/prepare-env-manual.html)
+
+[Deploying Ops Manager on GCP Manually](https://docs.pivotal.io/pivotalcf/2-4/om/gcp/deploy-manual.html)
+
+[Configuring BOSH Director on GCP Manually](https://docs.pivotal.io/pivotalcf/2-4/om/gcp/config-manual.html)
+
+[(Optional) Configuring a Shared VPC on GCP](https://docs.pivotal.io/pivotalcf/2-4/customizing/gcp-shared-vpc.html)
+
+[(Optional) Installing the PCF IPsec Add-On](http://docs.pivotal.io/addon-ipsec/installing.html)
+
+[Deploying PAS on GCP](https://docs.pivotal.io/pivotalcf/2-4/customizing/gcp-er-config.html)
+
+### Installing PCF on GCP with terraform
+
+[Deploying Ops Manager on GCP Using Terraform](https://docs.pivotal.io/pivotalcf/2-4/om/gcp/prepare-env-terraform.html)
+
+[Configuring BOSH Director on GCP Using Terraform](https://docs.pivotal.io/pivotalcf/2-4/om/gcp/config-terraform.html)
+
+[(Optional) Configuring a Shared VPC on GCP](https://docs.pivotal.io/pivotalcf/2-4/customizing/gcp-shared-vpc.html)
+
+[(Optional) Installing the PCF IPsec Add-On](http://docs.pivotal.io/addon-ipsec/installing.html)
+
+[Deploying PAS on GCP Using Terraform](https://docs.pivotal.io/pivotalcf/2-4/customizing/gcp-er-config-terraform.html)
+
+
+
 
 
 
