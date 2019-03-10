@@ -10,3 +10,16 @@ In this chapter, you will learn about the following:
 1.	The core components, including their purpose and boundary of responsibility
 2.	The flow of communication and interaction between components
 3.	The components responsible for state
+
+
+| Layer	                                     |  Compoenents                                                    |
+|------------------------------------------  | --------------------------------------------------------------- |
+| Routing                                    | GoRouter, TCPRouter, and external load balancer                 |
+| Authentication and user management         | Cloud Controller, Diego’s core components (e.g., BBS and Brain) |
+| App storage and execution                  | blobstore, Diego Cell (Garden, and runC)                        |
+| Services                                   | Service Broker, User Provided Service                           |
+| Messaging                                  | NATS (Network Address Translation) Messaging Bus                |
+| Metrics and logging                        |  Loggregator (including Doppler and the Firehose)               |
+
+
+  
