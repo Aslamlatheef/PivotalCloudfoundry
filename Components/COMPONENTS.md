@@ -1,6 +1,6 @@
 # Cloud Foundry Components
 
-Cloud Foundry is a distributed system involving several different components. Distributed systems balance their processing loads over multiple networked machines.1 They are optimized between efficiency and resiliency against failures. Cloud Foundry is comprised of a modular distributed architecture with discrete components utilized for dedicated purposes.
+Cloud Foundry is a distributed system involving several different components. Distributed systems balance their processing loads over multiple networked machines.They are optimized between efficiency and resiliency against failures. Cloud Foundry is comprised of a modular distributed architecture with discrete components utilized for dedicated purposes.
 
 ### DISTRIBUTED SYSTEMS
 
@@ -9,4 +9,4 @@ It is important for the operator to understand what comprises the Cloud Foundry 
 In this chapter, you will learn about the following:
 1.	The core components, including their purpose and boundary of responsibility
 2.	The flow of communication and interaction between components
-3.	The components responsible for state2
+3.	The components responsible for state
