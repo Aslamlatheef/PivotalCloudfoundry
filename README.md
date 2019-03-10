@@ -132,7 +132,7 @@ Finally, Cloud Foundry supports the use of availability zones (AZs)
 ![](https://github.com/Aslamlatheef/PivotalCloudfoundry/blob/master/PCF/cfazones.png)
 When you deploy multiple AIs, Cloud Foundry will distribute them evenly across the AZs. If, for example, a rack of servers fails and brings down an entire AZ, the AIs will still be up and serving traffic in the remaining AZs
 
-### Aggregated Streaming of Logs and Metrics ####
+### Aggregated Streaming of Logs and Metrics
 Cloud Foundry provides insight into both the application and the underlying platform through aggregated logging and metrics. The logging system within Cloud Foundry is known as the Loggregator. It is the inner voice of the system, telling the operator and developer what is happening. It is used to manage the performance, health, and scale of running applications and the platform itself, via the following:
 1. Logs provide visibility into behavior; for example, application logs can be used to trace through a specific call stack.
 2. Metrics provide visibility into health; for example, container metrics can include memory, CPU, and disk-per-app instance.
@@ -150,6 +150,12 @@ In addition to logs, metrics are gathered and streamed from system components. O
 - You can view logs from the command line or drain them into a log management service such as an ELK stack (Elasticsearch, Logstash, and Kibana), Splunk, or PCF Metrics.
 - Viewing events is useful when debugging problems. For example, it is useful to be able to correlate an app instance event (like an app crash) to the container’s specific metrics (high memory prior to crash).
 The cost of implementing an aggregated log and metrics-streaming solution involves bespoke engineering to orchestrate and aggregate the streaming of both syslog and application logs from every component within a distributed system into a central server. Using a platform removes the ongoing cost and associated maintenance of bespoke logging solutions.
+
+
+## Security
+For enterprises working with cloud-based infrastructure, security is a top concern. Usually the security teams have the strongest initial objections to Cloud Foundry because it works in a way that is generally unprecedented to established enterprise security teams. However, as soon as these teams understand the strength of Cloud Foundry’s security posture, my experience is that they become one of your strongest champions.
+
+Please refer Security.MD
 
 
 
