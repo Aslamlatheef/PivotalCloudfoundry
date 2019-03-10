@@ -91,7 +91,7 @@ Please create Service princepal with contributor access [Clickhere](https://docs
 
   [Deploying Ops Manager on AWS Using Terraform](https://docs.pivotal.io/pivotalcf/2-4/om/aws/prepare-env-terraform.html)
   
-  [Configuring BOSH Director on AWS Using Terraform]9https://docs.pivotal.io/pivotalcf/2-4/om/aws/config-terraform.html)
+  [Configuring BOSH Director on AWS Using Terraform](https://docs.pivotal.io/pivotalcf/2-4/om/aws/config-terraform.html)
   
   [(Optional) Installing the PCF IPsec Add-On](http://docs.pivotal.io/addon-ipsec/installing.html)
   
@@ -100,6 +100,14 @@ Please create Service princepal with contributor access [Clickhere](https://docs
 **[Creating a Proxy ELB for Diego SSH](https://docs.pivotal.io/pivotalcf/2-4/customizing/elb-ssh-proxy.html)
 
 [Upgrading Ops Manager Director on AWS](https://docs.pivotal.io/pivotalcf/2-4/customizing/aws-om-upgrade.html)
+
+## Best Practices
+https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
+
+http://d0.awsstatic.com/whitepapers/aws-security-best-practices.pdf
+
+https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf
+
 
 # PCF on GCP
 
