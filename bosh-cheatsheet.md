@@ -1,5 +1,8 @@
 # BOSH command line interface cheatsheet
 
+cheatsheet (https://cheatsheet.dennyzhang.com/cheatsheet-bosh-a4)
+
+
 ### Introduction
 
 BOSH is a powerful tool to install and manage your deployments. You can find docs on https://bosh.io/docs. Consider using `bosh-init` tool to install to a cloud of your choice MicroBOSH instance (MicroBOSH is a single VM BOSH installation, it has everything that you need to deploy and manage).
